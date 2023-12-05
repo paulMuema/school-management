@@ -1,15 +1,17 @@
 package com.example.schoolmanagement;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.schoolmanagement.databinding.ActivityMainBinding;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+/*import com.example.schoolmanagement.databinding.ActivityMainBinding;*/
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
@@ -17,7 +19,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class student_page extends AppCompatActivity {
 
-    ActivityMainBinding binding;
+    private Button next_button;
+    /*ActivityMainBinding binding;*/
     String fName, lName, sId;
     FirebaseDatabase db;
     DatabaseReference reference;
@@ -53,6 +56,18 @@ public class student_page extends AppCompatActivity {
                         }
                     });
                 }
+            }
+        });
+
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"})
+        Button course_button = findViewById(R.id.course_button);
+        course_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(student_page.this, course_page.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
