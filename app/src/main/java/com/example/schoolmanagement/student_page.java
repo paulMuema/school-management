@@ -11,7 +11,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-/*import com.example.schoolmanagement.databinding.ActivityMainBinding;*/
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
@@ -20,7 +19,6 @@ import com.google.firebase.database.FirebaseDatabase;
 public class student_page extends AppCompatActivity {
 
     private Button next_button;
-    /*ActivityMainBinding binding;*/
     String fName, lName, sId;
     FirebaseDatabase db;
     DatabaseReference reference;
